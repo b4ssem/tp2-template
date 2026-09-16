@@ -21,3 +21,5 @@ const getListNationalHolidays = async (region = "metropole") => {
         return {};
     }
 };
+
+export {getListNationalHolidays}
