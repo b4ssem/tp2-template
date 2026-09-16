@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Balise &lt;template> — Consignes TP</title>
+    <script src="https://danyellow.net/cours-mmi/consignes.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://danyellow.net/cours-mmi/consignes.css"
+    />
+    <link rel="icon" type="image/png" href="https://cyiut.cyu.fr/uas/iut/FAVICON/favicon-iut-cergypontoise_400x400px.png" />
+
+  </head>
+
+  <body>
+    <header class="consignes-en-tete">
+      <h1 class="titre-consignes">Balise &lt;template> — Consignes TP</h1>
+      <details class="consignes-conteneur" open>
+        <summary>
+          <p class="h1">Partie 1 (cliquer pour afficher / cacher)</p>
+        </summary>
+        <ol class="liste-consignes">
+          <li>
+            En vous inspirant de l'exemple dans les slides du cours, créez et affichez un template HTML sur votre page.
+            <ul>
+              <li>Si vous avez oublié "html:5" puis touche entrée, vous crée un squelette de page html</li>
+              <li>
+                <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/template" target="_blank" rel="noopener noreferrer">Voir documentation de &lt;template> - ouverture dans un nouvel onglet</a>
+              </li>
+            </ul>
+          </li>
+        </ol>
+        <p class="note-information">N'oubliez pas de créer un fichier javascript pour charger puis afficher votre template. Et bien évidemment de cloner votre template avant de l'utiliser.</p>
+      </details>
+      <details class="consignes-conteneur">
+        <summary>
+          <p class="h1">Partie 2 (cliquer pour afficher / cacher)</p>
+        </summary>
+        <ol class="liste-consignes">
+          <li>
+            Arrangez-vous pour modifier le contenu d'une ou plusieurs balises de votre template depuis le javascript.
+            <ul>
+              <li>Cette modification peut être de différent ordre : texte, lien d'image... Petit rappel sur les propriétés JS pour modifier un élément HTML :
+                <ul>
+                    <li>
+                        <a href="https://developer.mozilla.org/fr/docs/Web/API/Node/textContent" target="_blank" rel="noopener noreferrer">textContent - Texte</a>
+                    </li>
+                    <li>
+                        <a href="https://developer.mozilla.org/fr/docs/Web/API/Element/setAttribute" target="_blank" rel="noopener noreferrer">setAttribute - Gestion des attributs</a>
+                    </li>
+                    <li>
+                        <a href="https://developer.mozilla.org/fr/docs/Web/API/Element/classList" target="_blank" rel="noopener noreferrer">classList - Modification des classes CSS</a>
+                    </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ol>
+        <p class="note-information">S'il est préférable d'utiliser un data-attribute pour cibler un élément. Vous pouvez aussi cibler directement la balise si la structure est simple.</p>
+      </details>
+      <details class="consignes-conteneur">
+        <summary>
+          <p class="h1">Partie 3 (cliquer pour afficher / cacher)</p>
+        </summary>
+        <ol class="liste-consignes">
+            <li>Ajoutez un bouton qui, au clic, effectue les actions suivantes :
+                <ul>
+                    <li>Appelle la fonction "getListNationalHolidays" (contenue dans le fichier api.js). Elle retourne tous les jours fériés de l'année en cours</li>
+                    <li>Affiche les dates grâce à la balise &lt;template>. Ceci peut être via une liste (&lt;ol>) ou un tableau (&lt;table>)</li>
+                </ul>
+            </li>
+        </ol>
+        <div class="note-information">
+            <p>
+                L'API se base sur le site <a href="https://calendrier.api.gouv.fr/jours-feries/#/paths/~1%7Bzone%7D.json/get" target="_blank" rel="noopener noreferrer">https://calendrier.api.gouv.fr/jours-feries/</a> et retourne un JSON ayant la forme suivante :
+            </p>
+            <pre data-language="JSON" data-code-sample style="font-family:monospace;color: rgb(248, 248, 242); background-color: rgb(43, 43, 43); font-weight: 400; "><span style="color: rgb(248, 248, 242); font-weight: 400;">{</span>
+  <span style="color: rgb(248, 248, 242); font-weight: 400;">"2030-01-01"</span><span style="color: rgb(248, 248, 242); font-weight: 400;">:</span> <span style="color: rgb(171, 227, 56); font-weight: 400;">"1er janvier"</span><span style="color: rgb(248, 248, 242); font-weight: 400;">,</span>
+  <span style="color: rgb(248, 248, 242); font-weight: 400;">"2030-04-22"</span><span style="color: rgb(248, 248, 242); font-weight: 400;">:</span> <span style="color: rgb(171, 227, 56); font-weight: 400;">"Lundi de Pâques"</span><span style="color: rgb(248, 248, 242); font-weight: 400;">,</span>
+  <span style="color: rgb(248, 248, 242); font-weight: 400;">"2030-05-01"</span><span style="color: rgb(248, 248, 242); font-weight: 400;">:</span> <span style="color: rgb(171, 227, 56); font-weight: 400;">"1er mai"</span><span style="color: rgb(248, 248, 242); font-weight: 400;">,</span>
+  <span style="color: rgb(248, 248, 242); font-weight: 400;">"2030-05-08"</span><span style="color: rgb(248, 248, 242); font-weight: 400;">:</span> <span style="color: rgb(171, 227, 56); font-weight: 400;">"8 mai"</span><span style="color: rgb(248, 248, 242); font-weight: 400;">,</span>
+  <span style="color: rgb(248, 248, 242); font-weight: 400;">"2030-05-30"</span><span style="color: rgb(248, 248, 242); font-weight: 400;">:</span> <span style="color: rgb(171, 227, 56); font-weight: 400;">"Ascension"</span><span style="color: rgb(248, 248, 242); font-weight: 400;">,</span>
+  <span style="color: rgb(248, 248, 242); font-weight: 400;">"2030-06-10"</span><span style="color: rgb(248, 248, 242); font-weight: 400;">:</span> <span style="color: rgb(171, 227, 56); font-weight: 400;">"Lundi de Pentecôte"</span>
+<span style="color: rgb(248, 248, 242); font-weight: 400;">}</span></pre>
+<p>Toutefois, la fonction "getListNationalHolidays" formatte ces données. A vous de regarder la réponse formattée.</p>
+        </div>
+      </details>
+      <details class="consignes-conteneur">
+        <summary>
+          <p class="h1">Pour aller plus loin (cliquer pour afficher / cacher)</p>
+        </summary>
+        <ol class="liste-consignes">
+          <li>
+            <ul>
+              <li>Groupez les jours fériés par année</li>
+              <li>Affichez le contenu de chaque année avec les balises &lt;details> et &lt;summary></li>
+            </ul>
+          </li>
+          <li>
+            <ul>
+              <li>Proposez à l'utilisateur de sélectionner les différentes régions et mettez à jour les informations en fonction</li>
+            </ul>
+          </li>
+        </ol>
+        <section class="note-information">
+            <p>Pour proposer de meilleures performances, vous pouvez mettre les données en cache pour éviter un appel d'api si vous avez déjà chargé ces données. La liste des régions est trouvable dans la documentation.</p>
+            <ul>
+                <li>
+                    <a href="https://calendrier.api.gouv.fr/jours-feries/" target="_blank">Accéder à la documentation - ouverture dans un nouvel onglet</a>
+                </li>
+            </ul>
+        </section>
+      </details>
+    </header>
+  </body>
+</html>
